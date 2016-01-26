@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>todo</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="./main.css">
+		<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	</head>
+
+	<body class="body">
+		<main class="main | mdl-card mdl-shadow--2dp">
+			<header class="mdl-card__title">
+				<div class="mdl-card__title-text">
+					<h5 contentEditable>Todo List</h3>
+				</div>
+			</header>
+			<ul class="list | mdl-card__actions"></ul>
+
+			<footer class="mdl-card__actions mdl-card--border">
+				<input type="button" class="main__add | mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent" value="Add">
+			</footer>
+		</main>
+	</body>
+
+	<template class="template__row">
+		<li class="list__row todo">
+			<label class="todo__checkbox-label | mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+				<input type="checkbox" class="todo__checkbox | mdl-checkbox__input">
+			</label>
+			<div class="todo__input-container | mdl-textfield mdl-js-textfield">
+				<input type="text" class="todo__input-value | mdl-textfield__input">
+				<label class="todo__input-label | mdl-textfield__label">What you want to do...</label>
+			</div>
+			<input type="button" class="todo__remove | mdl-button mdl-js-button mdl-button--icon" value="&times;">
+		</li>
+	</template>
+
+	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+	<script src="./main.js"></script>
+</html>

@@ -1,0 +1,62 @@
+:root {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html,
+body {
+	margin: 0;
+}
+
+.body {
+	display: flex;
+	background-color: #eaeaea;
+}
+
+.main {
+	margin: auto;
+}
+
+.list {
+	padding: 0;
+	width: 100%;
+	list-style: none;
+}
+
+.list:empty::after {
+	content: 'Nothing to do';
+	margin: 0 8px;
+}
+
+.list__row {
+	display: flex;
+	padding: 4px 8px;
+	height: 48px;
+	align-items: center;
+}
+
+.todo__checkbox-label {
+	flex: 0 0 16px;
+}
+
+.todo__input-container {
+	flex: 1 1;
+}
+
+.todo__input-value:not(:focus) + .todo__input-label {
+	display: none;
+}
+
+.todo__remove {
+	visibility: hidden;
+	flex: 0 0 24px;
+}
+
+.todo:hover .todo__remove {
+	visibility: visible;
+}
