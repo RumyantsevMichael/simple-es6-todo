@@ -2,41 +2,46 @@
 <html>
 	<head>
 		<title>todo</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-		<link rel="stylesheet" href="./main.css">
+		<meta name="viewport"
+		      content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet"
+		      href="./main.css">
 	</head>
 
 	<body class="body">
-		<main class="main | mdl-card mdl-shadow--2dp">
-			<header class="mdl-card__title">
-				<div class="mdl-card__title-text">
-					<h5 contentEditable>Todo List</h3>
-				</div>
+		<main class="main">
+			<header class="header"
+			        contenteditable="true">
+				Todo List
 			</header>
-			<ul class="list | mdl-card__actions"></ul>
 
-			<footer class="mdl-card__actions mdl-card--border">
-				<input type="button" class="main__add | mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent" value="Add">
+			<ul class="list scrollbar"></ul>
+
+			<footer class="footer">
+				<input type="button"
+				       class="button main__add"
+				       value="Add">
 			</footer>
 		</main>
 	</body>
 
 	<template class="template__row">
 		<li class="list__row todo">
-			<label class="todo__checkbox-label | mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-				<input type="checkbox" class="todo__checkbox | mdl-checkbox__input">
-			</label>
-			<div class="todo__input-container | mdl-textfield mdl-js-textfield">
-				<input type="text" class="todo__input-value | mdl-textfield__input">
-				<label class="todo__input-label | mdl-textfield__label">What you want to do...</label>
-			</div>
-			<input type="button" class="todo__remove | mdl-button mdl-js-button mdl-button--icon" value="&times;">
+			<input type="checkbox"
+			       class="checkbox todo__checkbox">
+
+			<input type="text"
+			       class="input input_text todo__value">
+
+			<input type="button"
+			       class="icon-button todo__remove"
+			       value="&times;">
 		</li>
 	</template>
 
-	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
-	<script src="./node_modules/bem-naming/index.js"></script>
-	<script src="./main.js"></script>
+	<section id="assets">
+		<script src="./dist/vendor.js"></script>
+		<script src="./dist/common.js"></script>
+	</section>
 </html>

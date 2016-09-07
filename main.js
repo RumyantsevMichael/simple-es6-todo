@@ -31,7 +31,7 @@ void function (global) {
 		change (event) {
 			let todo = event.target.closest('.todo'),
 			    cbxComplete = todo.querySelector('.todo__checkbox'),
-			    inpInput = todo.querySelector('.todo__input-value');
+			    inpInput = todo.querySelector('.todo__value');
 
 			dispatchEvent(new CustomEvent('controller:set', {
 				detail: {
@@ -153,19 +153,26 @@ void function (global) {
 		}
 
 		add (event) {
-			let clone = document.importNode(this.tplRow.content, true);
+			const clone = document.importNode(this.tplRow.content, true);
 
 			clone.querySelector('.todo').dataset.id = event.detail.id;
 
-			clone.querySelector('.todo__checkbox-label').htmlFor = `todo__checkbox_id_${event.detail.id}`;
-			clone.querySelector('.todo__checkbox').id = `todo__checkbox_id_${event.detail.id}`;
-			clone.querySelector('.todo__checkbox').checked = event.detail.completed;
-			componentHandler.upgradeElement(clone.querySelector('.todo__checkbox-label'));
+			clone.querySelector('.todo__checkbox').id =  bem({
+				block: 'todo',
+				elem: 'checkbox',
+				modName: 'id',
+				modVal: event.detail.id
+			});
 
-			clone.querySelector('.todo__input-label').htmlFor = `todo__input_id_${event.detail.id}`;
-			clone.querySelector('.todo__input-value').id = `todo__input_id_${event.detail.id}`;
-			clone.querySelector('.todo__input-value').value = event.detail.value;
-			componentHandler.upgradeElement(clone.querySelector('.todo__input-container'));
+			clone.querySelector('.todo__value').id = bem({
+				block: 'todo',
+				elem: 'input',
+				modName: 'id',
+				modVal: event.detail.id
+			});
+
+			clone.querySelector('.todo__checkbox').checked = event.detail.completed;
+			clone.querySelector('.todo__value').value = event.detail.value;
 
 			this.elemList.appendChild(clone);
 		}
@@ -191,6 +198,14 @@ void function (global) {
 					item.remove();
 				});
 		}
+	}
+
+	function buildClass(className) {
+		return `.${className}`;
+	}
+
+	function bem(definition) {
+		return global.bemNaming.stringify(definition)
 	}
 
 	const controller = new mainController(),
