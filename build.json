@@ -1,0 +1,8 @@
+{
+	"vendor": [
+		"./node_modules/bem-naming/index.js"
+	],
+	"common": [
+		"./main.js"
+	]
+}

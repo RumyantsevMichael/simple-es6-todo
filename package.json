@@ -1,25 +1,26 @@
 {
-  "name": "simple-es6-todo",
-  "version": "0.1.0",
-  "main": "index.html",
-  "author": "Rumyantsev Michael",
-  "keywords": [
-    "todo"
-  ],
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RumyantsevMichael/simple-es6-todo.git"
-  },
-  "bugs": {
-    "url": "https://github.com/RumyantsevMichael/simple-es6-todo/issues"
-  },
-  "homepage": "https://github.com/RumyantsevMichael/simple-es6-todo#readme",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "bem-naming": "1.x"
-  },
-  "devDependencies": {}
+	"name": "simple-es6-todo",
+	"version": "0.1.0",
+	"main": "index.html",
+	"author": "Rumyantsev Michael",
+	"keywords": [
+		"todo"
+	],
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/RumyantsevMichael/simple-es6-todo.git"
+	},
+	"bugs": {
+		"url": "https://github.com/RumyantsevMichael/simple-es6-todo/issues"
+	},
+	"homepage": "https://github.com/RumyantsevMichael/simple-es6-todo#readme",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "node build.js"
+	},
+	"dependencies": {
+		"bem-naming": "1.x"
+	},
+	"devDependencies": {}
 }
